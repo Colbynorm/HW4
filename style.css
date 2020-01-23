@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+
+}
+
+.quiz-container {
+    background-color: lightblue;
+    position: relative;
+    height: 300px;
+    margin-top: 50px;
+}
+
+.container {
+    object-position: center;
+}
+
