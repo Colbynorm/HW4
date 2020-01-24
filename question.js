@@ -1,4 +1,5 @@
 function generateQuiz (questions, quizContainer, resultsContainer, submitButton) {
+console.log({questions, quizContainer, resultsContainer, submitButton})
 
     showQuestions(quizContainer);
 
@@ -7,9 +8,19 @@ function generateQuiz (questions, quizContainer, resultsContainer, submitButton)
     }
 };
 
-function showResults(questions, quizContainer, resultsContainer){
+function showResults(_questions, _quizContainer, _resultsContainer){
         
 }
+
+function initialize() {
+    startButton.style.display = 'none';
+}
+
+function sendMessage(){
+    timeEl.textContent = "time is up";
+}
+
+
 
 var i = 0;
 
@@ -29,9 +40,9 @@ function showQuestions(quizContainer){
                 var userAnswer = event.target.innerText;
                 var correctAnswer = myQuestions[i].correctAnswer;
                 if(userAnswer === correctAnswer){
-                    console.log("correct!")
+                    alert("correct!")
                 } else {
-                    console.log(" wrong!")
+                    alert(" wrong!")
                 }
                 //right or wrong
                 //change color
@@ -71,14 +82,13 @@ var myQuestions = [
         correctAnswer: 'Dallas Mavvericks'
     }
 ];
-
+var timeEl = document.querySelector("time");
+var mainEl = document.getElementById("main");
 var quizContainer = document.getElementById('quiz');
 console.log(quizContainer)
 var resultsContainer = document.getElementById('results');
 console.log(resultsContainer)
 var submitButton = document.getElementById('submit');
-var nextButton = document.getElementById('next');
-
-nextButton.onclick = function(){}
+var startButton = document.getElementById('start');
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);

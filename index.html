@@ -8,14 +8,26 @@
     <title>HW4 Quiz</title>
 </head>
 <body>
-    <h1>My Amazing Quiz!</h1>
-    onload="initialize()"
+    <h1>My Quiz!</h1>
     <div class="quiz-container" id="quiz"></div>
-    <button id="previous">Previous</button>
-    <button id="next">Next</button>
-    <button id="submit">Submit</button>
-    <button id="start" onclick="initialize()">Start</button>
-    <div id="results">Results:</div>
+        <div class="buttons"> 
+            <button id="start" onclick="initialize()">Start</button>
+            <button id="submit">Submit</button>
+        </div>
+        <div id="time">Time:</div>
+        <div id="results">Results:</div>
+        <div class="highscore">
+            <form id="highscore-form" method="POST">
+                <label for="highscore-text">Add High Score</label>
+                <input type="text" placeholder="New High Score!" name="highscore-text"
+                id="highscore-text">
+            </form>
+            <p>High Score Count: <span id="highscore-count">0</span></p>
+            <ul id="highscore-count"></ul>
+            <p>High Score List: <span id="highscore-list">0</span></p>
+            <ul id="highscore-list"></ul>
+        </div>
     <script src="question.js"></script>
+    <script src="./highscore.js"></script>
 </body>
 </html>
